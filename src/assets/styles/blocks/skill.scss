@@ -1,0 +1,23 @@
+.skill {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px 5px 5px;
+
+  background-color: $color-pink;
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill__icon {
+  width: 30px;
+  height: 30px;
+
+  img {
+    width: 100%;
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0;
+  }
+}
