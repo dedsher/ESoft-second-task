@@ -16,6 +16,8 @@
   margin: 0;
 
   font-size: 30px;
+  font-family: $font-space-mono;
+  word-spacing: -10px;
 }
 
 .portfolio__cursor {
@@ -65,8 +67,13 @@
   font-size: 28px;
 }
 
+.portfolio__subtitle {
+  margin-bottom: 30px;
+}
+
 .portfolio__skills-list {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;

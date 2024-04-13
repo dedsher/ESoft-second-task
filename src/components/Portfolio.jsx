@@ -1,6 +1,7 @@
 import currentSkills from "@data/currentSkills";
 import futureSkills from "@data/futureSkills";
-import Skills from "@components/Skills";
+import OwnSkills from "@components/OwnSkills";
+import FutureSkills from "@components/FutureSkills";
 import Person from "@components/Person";
 import Title from "./Title";
 
@@ -9,8 +10,8 @@ const Portfolio = () => {
     <section className="portfolio">
       <Title />
       <Person />
-      <Skills skillsList={currentSkills} title="Мои компетенции" />
-      <Skills skillsList={futureSkills} title="Технологии, которые я хочу изучить" className="portfolio__skills-list--second" />
+      <OwnSkills skillsList={currentSkills} title="Мои компетенции" />
+      {/* <FutureSkills skillsList={futureSkills} title="Технологии, которые я хочу изучить" className="portfolio__skills-list--second" /> */}
     </section>
   );
 };
