@@ -1,21 +1,37 @@
 .skill {
   display: flex;
   flex-direction: column;
-  padding: 5px 15px 5px 5px;
+  padding: 10px 15px 10px 15px;
 
   background-color: $color-pink;
   border-radius: 10px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-
-  gap: 10px;
 }
 
 .skill_wrapper {
   display: grid;
   align-items: center;
 
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 30% 70%;
+}
+
+.skill__delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  padding: 3px;
+
+  background-color: $color-transparent;
+  border: unset;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .skill__info {
@@ -70,10 +86,32 @@
 
     border: 1px solid $color-pink;
     border-radius: inherit;
-    ;
   }
 }
 
 .skill__description {
-  padding: 0 10px 10px 10px;
+  max-height: 0;
+  overflow: hidden;
+
+  font-size: 16px;
+
+  transition: all 0.3s linear;
+
+  &.skill__description--open {
+    max-height: 200px;
+  }
+
+  a {
+    color: $color-wedgewood;
+  }
+
+  a:hover,
+  a:active {
+    color: rgba($color-wedgewood, 0.7);
+  }
+
+  b {
+    font-family: $font-space-mono;
+    letter-spacing: 1px;
+  }
 }

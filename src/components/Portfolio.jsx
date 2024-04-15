@@ -1,17 +1,33 @@
+import { useState } from "react";
 import currentSkills from "@data/currentSkills";
-import futureSkills from "@data/futureSkills";
-import OwnSkills from "@components/OwnSkills";
-import FutureSkills from "@components/FutureSkills";
+import Skills from "@components/Skills";
 import Person from "@components/Person";
-import Title from "./Title";
+import PromoTitle from "@components/PromoTitle";
+import ManageSkills from "@components/ManageSkills";
 
 const Portfolio = () => {
+  const [isListOpened, setIsListOpened] = useState(false);
+  const [skills, setSkills] = useState(currentSkills);
+
+  const onSkillAdd = (newSkill) => {
+    setSkills([...skills, newSkill]);
+  };
+
+  const onSkillDelete = (id) => {
+    setSkills(skills.filter((skill) => skill.id !== id));
+  };
+
   return (
     <section className="portfolio">
-      <Title />
+      <PromoTitle />
       <Person />
-      <OwnSkills skillsList={currentSkills} title="Мои компетенции" />
-      {/* <FutureSkills skillsList={futureSkills} title="Технологии, которые я хочу изучить" className="portfolio__skills-list--second" /> */}
+      <Skills
+        skillsList={skills}
+        isOpen={isListOpened}
+        onClick={() => setIsListOpened(!isListOpened)}
+        onSkillDelete={onSkillDelete}
+      />
+      <ManageSkills onSkillAdd={onSkillAdd} />
     </section>
   );
 };
