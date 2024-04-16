@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Title from "@components/Title";
+import defaultIcon from "@assets/images/default-tech-icon.png";
 
 const ManageSkills = ({ onSkillAdd }) => {
   const [name, setName] = useState("");
@@ -14,7 +15,7 @@ const ManageSkills = ({ onSkillAdd }) => {
       name,
       level,
       description,
-      img,
+      img : img ? img : defaultIcon,
     };
 
     onSkillAdd(newSkill);
@@ -53,7 +54,7 @@ const ManageSkills = ({ onSkillAdd }) => {
           placeholder="Описание"
           required
         />
-        <input type="file" onChange={handleImgChange} required />
+        <input type="file" onChange={handleImgChange} />
         <button type="submit">Добавить навык</button>
       </form>
     </div>
