@@ -1,10 +1,12 @@
 import avatar from "@assets/images/avatar.jpg";
 
-const Person = () => {
-  const name = "Ромчик Шамов";
-  const age = "19 лет";
-  const nicknames = ["ромчик163", "shori", "шамчик"];
+const person = {
+  name: "Ромчик Шамов",
+  age: "19 лет",
+  nicknames: ["ромчик163", "shori", "шамчик"],
+}
 
+const Person = () => {
   return (
     <div className="portfolio__person">
       <div className="portfolio__avatar">
@@ -12,9 +14,9 @@ const Person = () => {
       </div>
       <div className="portfolio__about">
         <h1 className="portfolio__name">
-          {name}, {age}
+          {person.name}, {person.age}
         </h1>
-        <i className="portfolio__nickname">{nicknames.join(" | ")}</i>
+        <i className="portfolio__nickname">{person.nicknames.join(" | ")}</i>
       </div>
     </div>
   );

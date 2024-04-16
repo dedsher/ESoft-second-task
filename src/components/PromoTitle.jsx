@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 
+const promoTitleOptions = {
+  fullText: "who am i",
+  typingSpeed: 100,
+  repeatDelay: 10000,
+}
+
 const PromoTitle = () => {
   const [text, setText] = useState("");
-  const fullText = "who am i";
-  const typingSpeed = 100;
-  const repeatDelay = 10000;
 
   useEffect(() => {
     let currentIndex = 0;
@@ -12,8 +15,8 @@ const PromoTitle = () => {
 
     const startTyping = () => {
       interval = setInterval(() => {
-        if (currentIndex <= fullText.length) {
-          setText(fullText.slice(0, currentIndex));
+        if (currentIndex <= promoTitleOptions.fullText.length) {
+          setText(promoTitleOptions.fullText.slice(0, currentIndex));
           currentIndex++;
         } else {
           clearInterval(interval);
@@ -21,9 +24,9 @@ const PromoTitle = () => {
             setText("");
             currentIndex = 0;
             startTyping();
-          }, repeatDelay);
+          }, promoTitleOptions.repeatDelay);
         }
-      }, typingSpeed);
+      }, promoTitleOptions.typingSpeed);
     };
 
     startTyping();
