@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 // Colors
 // --------------------------------------------
 
@@ -11,8 +14,12 @@ $color-transparent: rgba(255, 255, 255, 0);
 
 $color-swiss: #d8d0d0;
 $color-pink: #fef4f4;
+$color-silver: #cac2c2;
+$color-gray: #878787;
+$color-wedgewood: #4a7ba6;
 
 // Typography
 // --------------------------------------------
 
-$font-open-sans: "Open Sans", sans-serif;
+$font-ubuntu: "Ubuntu", sans-serif;
+$font-space-mono: "Space Mono", monospace;

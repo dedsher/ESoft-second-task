@@ -1,8 +1,8 @@
 .portfolio {
-  display: flex;
-  flex-direction: column;
-  width: 700px;
-  margin: 0 auto;
+  display: grid;
+
+// width: 700px;
+  margin: 80px auto 0 auto;
   padding: 20px;
 
   background-color: $color-default-white;
@@ -10,12 +10,15 @@
   box-shadow: 0 0 20px 5px rgba($color-default-black, 0.3);
 
   gap: 20px;
+  grid-template-columns: 600px 400px;
 }
 
 .portfolio__title {
-  margin: 0;
+  margin: 0 0 20px 0;
 
   font-size: 30px;
+  font-family: $font-space-mono;
+  word-spacing: -8px;
 }
 
 .portfolio__cursor {
@@ -47,11 +50,11 @@
 }
 
 .portfolio__avatar {
-  width: 130px;
-  height: fit-content;
+  width: 100px;
+  height: 100px;
   overflow: hidden;
 
-  border-radius: 20px;
+  border-radius: 50%;
 
   img {
     display: block;
@@ -65,13 +68,99 @@
   font-size: 28px;
 }
 
-.portfolio__skills-list {
+.portfolio__competencies {
+  grid-column: 1;
+}
+
+.portfolio__subtitle {
+  margin: 30px 0;
+
+  font-weight: 600;
+  font-family: $font-space-mono;
+  word-spacing: -8px;
+
+  user-select: none;
+}
+
+.portfolio__toggle {
   display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
+  justify-content: space-between;
+  align-items: center;
 
-  list-style-type: none;
+  cursor: pointer;
 
-  gap: 15px;
+  &:hover .portfolio__toggle-sign,
+  &:hover path {
+    color: $color-gray;
+
+    fill: $color-gray;
+  }
+}
+
+.portfolio__toggle-sign {
+  display: flex;
+  align-items: center;
+
+  color: $color-silver;
+
+  transition: all 0.2s ease;
+
+  user-select: none;
+
+  gap: 10px;
+
+  path {
+    transition: all 0.2s ease;
+  }
+
+  svg {
+    transition: all 0.2s ease;
+  }
+
+  &--opened {
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.portfolio__filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  gap: 7px;
+}
+
+.portfolio__competencies-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 0.5s ease;
+
+  &--opened {
+    max-height: 1000px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+
+    gap: 15px;
+  }
+}
+
+.portfolio__skills-manage {
+  form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+  }
 }
